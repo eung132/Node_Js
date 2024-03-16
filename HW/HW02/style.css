@@ -1,0 +1,66 @@
+*{margin: 0; padding: 0;}
+#total
+{
+    width: 1606px;
+    height: 906px;
+}
+#d_top
+{
+    width: 1602px;
+    height: 100px;
+    float: left;
+    text-align: right;
+    line-height: 90px;
+    border: 2px solid black;
+}
+#student_id, #student_name
+{
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    padding-right: 20px;
+}
+#d_left
+{
+    width: 320px;
+    height: 800px;
+    float: left;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+button
+{
+    margin: 8px;
+    padding: 8px;
+    margin-left: 35px;
+    width: 250px;
+    height: 70px;
+    font-size: 30px;
+    color: powderblue;
+    font-weight: 100;
+    border: 2px black solid;
+}
+a
+{
+    text-decoration: none;
+    color: powderblue;
+}
+#d_right
+{
+    width: 1280px;
+    height: 800px;
+    float: left;
+    text-align: center;
+    line-height: 800px;
+    font-size: 50px;
+    color: pink;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+#myCanvas
+{
+    background-color: white;
+    width: 1200px;
+    height: 600px;
+}
