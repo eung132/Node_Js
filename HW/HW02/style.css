@@ -1,17 +1,24 @@
 *{margin: 0; padding: 0;}
+@font-face {
+    font-family: 'YEONGJUSeonbiTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/YEONGJUSeonbiTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 #total
 {
-    width: 1606px;
-    height: 906px;
+    width: 1600px;
+    height: 900px;
 }
 #d_top
 {
-    width: 1602px;
+    width: 1600px;
     height: 100px;
     float: left;
+    font-family: 'YEONGJUSeonbiTTF';
     text-align: right;
     line-height: 90px;
-    border: 2px solid black;
+    background-color: beige;
 }
 #student_id, #student_name
 {
@@ -25,9 +32,7 @@
     width: 320px;
     height: 800px;
     float: left;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    background-color: bisque;
 }
 button
 {
@@ -39,7 +44,6 @@ button
     font-size: 30px;
     color: powderblue;
     font-weight: 100;
-    border: 2px black solid;
 }
 a
 {
@@ -55,24 +59,28 @@ a
     line-height: 800px;
     font-size: 50px;
     color: pink;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    background-color: aliceblue;
+    position: relative;
 }
 #myCanvas
 {
-    background-color: white;
+    background-color: aliceblue;
     width: 1200px;
     height: 600px;
 }
 img
 {
-    float: left;
+    position: absolute;
+    left: 100px;
+    top: 200px;
 }
 ul
 {
-    float: left;
     line-height: 100px;
     padding-top: 50px;
+    position: absolute;
+    right: 150px;
+    top: 110px;
 }
 li
 {
