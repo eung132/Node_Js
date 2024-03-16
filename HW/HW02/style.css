@@ -64,3 +64,19 @@ a
     width: 1200px;
     height: 600px;
 }
+img
+{
+    float: left;
+}
+ul
+{
+    float: left;
+    line-height: 100px;
+    padding-top: 50px;
+}
+li
+{
+    text-align: left;
+    color: black;
+    font-size: 20px;
+}
