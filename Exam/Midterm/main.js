@@ -1,88 +1,94 @@
 var canvas = document.getElementById('GameScreenCanvas');
 var ctx = canvas.getContext('2d');
 
+// var buttonVisible = true; // 버튼이 보이는지 여부를 나타내는 변수
 
-canvas.addEventListener('mousedown', function(event) {
-    var rect = canvas.getBoundingClientRect();
-    var mouseX = event.clientX - rect.left;
-    var mouseY = event.clientY - rect.top;
+// // 캔버스 전체를 그리는 함수
+// function drawCanvas() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height); // 캔버스를 지웁니다.
+//     if (buttonVisible) {
+//         drawButton(ctx, buttonX, buttonY, buttonWidth, buttonHeight); // 버튼을 그립니다.
+//     }
+// }
 
-     // 클릭한 위치가 버튼의 영역 안에 있다면
-     if (mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
-        ctx.fillStyle = 'rgb(0, 32, 96)';
-        ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
+// canvas.addEventListener('mousedown', function(event) {
+//     var rect = canvas.getBoundingClientRect();
+//     var mouseX = event.clientX - rect.left;
+//     var mouseY = event.clientY - rect.top;
+
+//      // 클릭한 위치가 버튼의 영역 안에 있다면
+//      if (mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
+//         ctx.fillStyle = 'rgb(0, 32, 96)';
+//         ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
         
-        // 클릭 시 1초 후 별과 하트를 그리는 함수 호출
-        setTimeout(function() {
-            drawCanvas(); // 버튼을 다시 그리기 위해 캔버스 전체를 그립니다.
-            gamescreen(); // 별과 하트를 그리는 함수 호출
-        }, 1000);
-    }
-});
+//         // 클릭 시 1초 후 별과 하트를 그리는 함수 호출
+//         setTimeout(function() {
+//             drawCanvas(); // 버튼을 다시 그리기 위해 캔버스 전체를 그립니다.
+//             gamescreen(); // 별과 하트를 그리는 함수 호출
+//         }, 1000);
+//     }
+// });
 
-// 버튼 위치 및 크기 설정
-var buttonWidth = 100;
-var buttonHeight = 50;
-var buttonX = (canvas.width - buttonWidth) / 2;
-var buttonY = (canvas.height - buttonHeight) / 2 + 200;
+// // 버튼 위치 및 크기 설정
+// var buttonWidth = 100;
+// var buttonHeight = 50;
+// var buttonX = (canvas.width - buttonWidth) / 2;
+// var buttonY = (canvas.height - buttonHeight) / 2 + 200;
 
-// 버튼 그리기 함수
-function drawButton(ctx, x, y, width, height, isHover) {
-    if (isHover) {
-        ctx.fillStyle = 'rgb(248, 203, 178)';
-    } else {
-        ctx.fillStyle = 'gainsboro';
-    }
-    ctx.fillRect(x, y, width, height);
+// // 버튼 그리기 함수
+// function drawButton(ctx, x, y, width, height, isHover) {
+//     if (isHover) {
+//         ctx.fillStyle = 'rgb(248, 203, 178)';
+//     } else {
+//         ctx.fillStyle = 'gainsboro';
+//     }
+//     ctx.fillRect(x, y, width, height);
 
-    ctx.fillStyle = 'black';
-    ctx.font = '20px Arial';
-    var textX = x + (width - ctx.measureText('시작').width) / 2;
-    var textY = y + (height + 20) / 2; // 텍스트의 높이는 20px로 가정
-    ctx.fillText('시작', textX, textY);
-}
+//     ctx.fillStyle = 'black';
+//     ctx.font = '20px Arial';
+//     var textX = x + (width - ctx.measureText('시작').width) / 2;
+//     var textY = y + (height + 20) / 2; // 텍스트의 높이는 20px로 가정
+//     ctx.fillText('시작', textX, textY);
+// }
 
-// 버튼의 상태 (호버 여부)를 나타내는 변수
-var isButtonHover = false;
+// // 버튼의 상태 (호버 여부)를 나타내는 변수
+// var isButtonHover = false;
 
-// 버튼 이벤트 처리
-canvas.addEventListener('mousemove', function(event) {
-    var rect = canvas.getBoundingClientRect();
-    var mouseX = event.clientX - rect.left;
-    var mouseY = event.clientY - rect.top;
+// // 버튼 이벤트 처리
+// canvas.addEventListener('mousemove', function(event) {
+//     var rect = canvas.getBoundingClientRect();
+//     var mouseX = event.clientX - rect.left;
+//     var mouseY = event.clientY - rect.top;
 
-    // 호버된 위치가 버튼의 영역 안에 있는지 확인
-    isButtonHover = (mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight);
-    // 캔버스를 다시 그려 호버 상태를 반영
-    drawCanvas();
-});
+//     // 호버된 위치가 버튼의 영역 안에 있는지 확인
+//     isButtonHover = (mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight);
+//     // 캔버스를 다시 그려 호버 상태를 반영
+//     drawCanvas();
+// });
 
-canvas.addEventListener('mousedown', function(event) {
-    var rect = canvas.getBoundingClientRect();
-    var mouseX = event.clientX - rect.left;
-    var mouseY = event.clientY - rect.top;
+// canvas.addEventListener('mousedown', function(event) {
+//     var rect = canvas.getBoundingClientRect();
+//     var mouseX = event.clientX - rect.left;
+//     var mouseY = event.clientY - rect.top;
 
-    // 클릭한 위치가 버튼의 영역 안에 있다면
-    if (mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
-        ctx.fillStyle = 'rgb(0, 32, 96)';
-        ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
+//     // 클릭한 위치가 버튼의 영역 안에 있다면
+//     if (mouseX > buttonX && mouseX < buttonX + buttonWidth && mouseY > buttonY && mouseY < buttonY + buttonHeight) {
+//         ctx.fillStyle = 'rgb(0, 32, 96)';
+//         ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
         
-        // 클릭 시 실행할 함수 호출
-        gamescreen();
-    }
-});
+//         // 클릭 시 실행할 함수 호출
+//         gamescreen();
+//     }
+// });
 
-// 캔버스 그리기 함수
-function drawCanvas() {
-    // 캔버스를 클리어
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+// // 캔버스 그리기 함수
+// function drawCanvas() {
+//     // 캔버스를 클리어
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // 버튼 그리기
-    drawButton(ctx, buttonX, buttonY, buttonWidth, buttonHeight, isButtonHover);
-}
-
-// 캔버스 그리기 초기 호출
-drawCanvas();
+//     // 버튼 그리기
+//     drawButton(ctx, buttonX, buttonY, buttonWidth, buttonHeight, isButtonHover);
+// }
 
 function gamescreen()
 {
@@ -151,4 +157,4 @@ function getRandomY() {
     return Math.random() * canvas.height;
 }
 
-
+gamescreen();
